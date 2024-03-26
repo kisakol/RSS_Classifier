@@ -1,0 +1,28 @@
+metadata_version: 1
+name: Identification of Unique Rectal Cancer Specific Subtypes Based on Gene Expression
+  Profiles
+description: "Identification of Unique Rectal Cancer Specific Subtypes\nMolecular
+  subtyping in colorectal cancers revealed many biological insights regarding colorectal
+  tumour development. However, the treatment setting differences between colon and
+  rectal cancers suggest that they can be treated separately in the molecular level
+  analysis too. Here, we trained an XgBoost Classifier model to predict rectal-specific
+  subtypes based on gene expression profiles of treatment-naive rectal samples. The
+  pre-trained model takes a data frame as an input and predicts the associated subtypes
+  for each patient. \n\nInstructions:\nThe sample input file format can be seen in
+  the 'rectal182.txt 'file. The data frame format looks like this:\nRows: Sample IDs,
+  Columns:  gene names (hugo symbols), and Values: log2 scaled gene expression counts.
+  \nHow it works: The model groups the genes that are pre-defined in the 'gene_modules/filtered_gene_modules.txt'
+  file and takes the median to represent each module. Then calls the pre-defined XgBoost
+  Classifier to predict sample types. This code outputs a tab-separated file with
+  two columns: the first column is the Sample IDs of the input file and the second
+  column is the predicted rectal-specific subtype (RSS1/2/3).\nRun: Users can change
+  the path to their desired gene expression matrix input and run the test.py file.
+  or import the rss_classification python file and call the rss_classifier function
+  as instructed."
+tags:
+- gene expression data
+- XGBoost
+authors:
+- name: Batuhan Kisakol
+  affiliations:
+  - name: Royal College of Surgeons in Ireland
