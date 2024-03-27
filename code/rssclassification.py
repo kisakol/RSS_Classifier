@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
-
+import os
 
 def rssclassifier(
     dataframe_path: str,
@@ -10,7 +10,7 @@ def rssclassifier(
     scaled: bool = False,
     output: str = "RSS_predictions",
 ) -> None:
-
+    
     """
     Predicts the RSS clusters of the input data using the trained model and gene modules.
     Args:
@@ -24,6 +24,12 @@ def rssclassifier(
     Writes:
         A file with the predicted RSS clusters.
     """
+    
+    model_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'model', 'model_XgBoost_Rectal_Specific_Classifier.json')
+    modules_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'gene_modules', 'filtered_genes_modules.txt')
+    
+    print(os.getcwd())
+
 
     clf = XGBClassifier()
     clf.load_model(model_path)

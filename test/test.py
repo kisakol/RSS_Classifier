@@ -1,5 +1,5 @@
 import unittest
-from code.rssclassification import rssclassifier
+from code.rssclassification import Rss
 
 class TestFunction(unittest.TestCase):
     def test_function(self):
@@ -11,7 +11,7 @@ class TestFunction(unittest.TestCase):
         dataframe_path = "../input/rectal182.txt"
 
         # Call the function with user-defined paths
-        rssclassifier(dataframe_path, model_path, modules_path, scaled=False, output=output_path)
+        Rss.rssclassifier(dataframe_path, model_path, modules_path, scaled=False, output=output_path)
 
 
 if __name__ == "__main__":
