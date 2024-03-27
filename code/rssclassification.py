@@ -3,8 +3,8 @@ from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
 
-def RSSClassifier(
-    df: pd.DataFrame,
+def rssclassifier(
+    dataframe_path: str,
     model_path: str = "../data/model/model_XgBoost_Rectal_Specific_Classifier.json",
     modules_path: str = "../data/gene_modules/filtered_genes_modules.txt",
     scaled: bool = False,
@@ -14,7 +14,7 @@ def RSSClassifier(
     """
     Predicts the RSS clusters of the input data using the trained model and gene modules.
     Args:
-        df: pd.DataFrame: The input data.  Rows should be samples and columns should be genes. First row should be the gene names (HUGO SYMBOLS). Data should be log2 transformed.
+        dataframe_path: The input data path. Rows should be samples and columns should be genes. First row should be the gene names (HUGO SYMBOLS). Data should be log2 transformed.
         model_path: str: The path to the trained model.
         modules_path: str: The path to the modules file.
         scaled: bool: If the input data is scaled. Default is False.
@@ -27,6 +27,8 @@ def RSSClassifier(
 
     clf = XGBClassifier()
     clf.load_model(model_path)
+
+    df = pd.read_csv(dataframe_path, sep="\t", index_col=0)
 
     genes_modules = pd.read_csv(modules_path, sep="\t")
     genes_modules.columns = ["genes", "modules"]

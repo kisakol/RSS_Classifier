@@ -1,7 +1,5 @@
 import unittest
-from code.rss_classification import RSSClassifier
-import pandas as pd
-
+from code.rssclassification import rssclassifier
 
 class TestFunction(unittest.TestCase):
     def test_function(self):
@@ -12,10 +10,8 @@ class TestFunction(unittest.TestCase):
         output_path = "../output/RSSpredictions"
         dataframe_path = "../input/rectal182.txt"
 
-        df_to = pd.read_csv(dataframe_path, sep="\t", index_col=0)
-
         # Call the function with user-defined paths
-        RSSClassifier(df_to, model_path, modules_path, scaled=False, output=output_path)
+        rssclassifier(dataframe_path, model_path, modules_path, scaled=False, output=output_path)
 
 
 if __name__ == "__main__":

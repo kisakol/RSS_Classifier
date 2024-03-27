@@ -12,7 +12,7 @@ To install the package, you can use `pip`:
 
 ## Installation (Docker)
 ```docker pull yourusername/yourimage:tag```
-```docker run -v /path/to/local/files:/app/files yourimage:tag```
+```docker build -t my_package .```
 
 ## Args
     Predicts the RSS clusters of the input data using the trained model and gene modules.  
