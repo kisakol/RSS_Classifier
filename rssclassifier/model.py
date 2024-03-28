@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 import os
 
-def rssclassifier(
+def rss_predict(
     dataframe_path: str,
     model_path: str = "../data/model/model_XgBoost_Rectal_Specific_Classifier.json",
     modules_path: str = "../data/gene_modules/filtered_genes_modules.txt",

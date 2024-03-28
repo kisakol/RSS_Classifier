@@ -1,1 +1,1 @@
-from .rss_classifier import rssclassifier
+from .model import rss_predict
