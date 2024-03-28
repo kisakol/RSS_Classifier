@@ -1,1 +1,1 @@
-from .model import rss_predict
+from .rssmodel import rss_predict

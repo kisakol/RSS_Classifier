@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 import argparse
+import os
 
 class Rss:
     def __init__(self,
@@ -12,8 +13,8 @@ class Rss:
         output: str = "RSS_predictions",
     )  -> None:
         self.dataframe_path = dataframe_path
-        self.model_path = model_path
-        self.modules_path = modules_path
+        self.model_path = model_path or os.path.join(os.path.dirname(__file__), '..', 'data', 'models', 'model_XgBoost_Rectal_Specific_Classifier.json')
+        self.modules_path = modules_path or os.path.join(os.path.dirname(__file__), '..', 'data', 'gene_modules', 'filtered_genes_modules.txt')
         self.scaled = scaled
         self.output = output
 

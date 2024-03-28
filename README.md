@@ -11,8 +11,7 @@ To install the package, you can use `pip`:
 
 
 ## Installation (Docker)
-```docker pull yourusername/yourimage:tag```
-```docker build -t my_package .```
+will be updated soon
 
 ## Args
     Predicts the RSS clusters of the input data using the trained model and gene modules.  
@@ -33,7 +32,7 @@ To install the package, you can use `pip`:
 To use the function, simply import it and call it with the required arguments:
 
 ```python
-from rssclassifier.model import rss_predict
+from rssclassifier.rssmodel import rss_predict
 
 # Prepare input data
 dataframe_path = "path/to/df"

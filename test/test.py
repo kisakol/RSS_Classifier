@@ -1,5 +1,5 @@
 import unittest
-from rssclassifier.model import rss_predict
+from rssclassifier.rssmodel import rss_predict
 
 class TestFunction(unittest.TestCase):
     def test_function(self):
