@@ -1,1 +1,1 @@
-from .rssclassification import rssclassifier
+from .rss_classifier import rssclassifier
