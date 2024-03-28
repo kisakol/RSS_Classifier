@@ -39,7 +39,7 @@ from rssclassifier.model import rss_predict
 dataframe_path = "path/to/df"
 
 # Call the function
-rss_predict(df_to, output="RSS_classifications")
+rss_predict(dataframe_path, output="RSS_classifications")
 ```
 
 # Reference
