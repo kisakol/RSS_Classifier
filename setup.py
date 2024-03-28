@@ -6,6 +6,7 @@ setup(
     author='Batuhan Kisakol',
     author_email='batuhankisakol@gmail.com',
     url='https://github.com/kisakol/RSS_Classifier',
+    description='RSS Classifier for rectal cancer samples',
     packages=find_packages(),
     package_data={
         'my_package': ['data/gene_modules/*.txt', 'data/model/*'],
