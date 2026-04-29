@@ -1,2 +1,2 @@
-
-code/rss_depr.py
+*.pyc
+__pycache__/
