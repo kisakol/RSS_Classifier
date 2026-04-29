@@ -4,17 +4,6 @@ An XGBoost-based classifier for predicting **Rectal-cancer Specific Subtypes (RS
 
 > **Reference:** Kisakol, B., Matveeva, A., Salvucci, M. et al. *Identification of unique rectal cancer-specific subtypes.* Br J Cancer (2024). https://doi.org/10.1038/s41416-024-02656-0
 
----
-
-## How It Works
-
-1. Gene expression values are z-score scaled (unless `--scaled` is provided).
-2. Genes are grouped into pre-defined modules (`data/gene_modules/filtered_genes_modules.txt`); each module is summarised by its median expression.
-3. The pre-trained XGBoost model predicts one of three subtypes — **RSS1**, **RSS2**, or **RSS3** — per sample.
-4. Results are written to a tab-separated `.txt` file.
-
----
-
 ## Input Format
 
 Rows = samples, Columns = genes (HUGO symbols). Values must be **log2-transformed** gene expression counts.
@@ -29,15 +18,28 @@ See `input/rectal182.txt` for a full example.
 
 ---
 
+
+---
+
+## How It Works
+
+1. Gene expression values are z-score scaled (unless `--scaled` is provided).
+2. Genes are grouped into pre-defined modules (`data/gene_modules/filtered_genes_modules.txt`); each module is summarised by its median expression.
+3. The pre-trained XGBoost model predicts one of three subtypes — **RSS1**, **RSS2**, or **RSS3** per sample.
+4. Results are written to a tab-separated `.txt` file.
+
+---
+
+
 ## Installation
 
-### Option 1 — pip (quickest)
+### Option 1: pip
 
 ```bash
 pip install git+https://github.com/kisakol/RSS_Classifier.git
 ```
 
-### Option 2 — conda / mamba (recommended for reproducibility)
+### Option 2: conda / mamba
 
 > [mamba](https://mamba.readthedocs.io) is a faster drop-in replacement for conda. Either works below.
 
@@ -53,6 +55,8 @@ mamba env create -f environment/environment.yml
 
 # 3. Activate it
 conda activate rssclassifier
+# or, with mamba
+mamba activate rssclassifier
 
 # 4. Install the package in editable mode
 pip install -e .
@@ -68,7 +72,7 @@ To export your current environment for sharing:
 conda env export --no-builds > environment/environment.yml
 ```
 
-### Option 3 — Docker
+### Option 3: Docker
 
 ```bash
 # 1. Clone the repository
