@@ -9,7 +9,6 @@ setup(
     description="RSS Classifier for rectal cancer samples",
     packages=find_packages(),
     package_data={
-        # 'my_package' was wrong — must match the actual package directory name
         "rssclassifier": [
             "../data/gene_modules/*.txt",
             "../data/model/*",
