@@ -16,8 +16,6 @@ SAMPLE2  4.90   4.10    5.88   ...
 
 See `input/rectal182.txt` for a full example.
 
----
-
 
 ---
 
